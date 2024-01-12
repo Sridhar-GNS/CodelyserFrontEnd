@@ -1,0 +1,30 @@
+<!-- <div>
+    <countdown class="timer"  #countdown [config]="{leftTime:3600}"></countdown>
+      <div>
+          <h2>Question {{ currentIndex + 1 }}</h2>
+          <p>{{ currentQuestion.question }}</p>
+          <ul>
+            <li *ngFor="let option of currentQuestion.options">{{ option }}</li>
+          </ul>
+          <button (click)="onNextClick()">next</button>
+      </div>    
+  </div> -->
+
+  <div>
+    <countdown class="timer"  #countdown [config]="{leftTime:3600}"></countdown>
+    <div>
+      <h2>Question {{ currentIndex + 1 }}</h2>
+      <p>{{ currentQuestion.question }}</p>
+      <ul>
+        <li *ngFor="let option of currentQuestion.options">
+          <label>
+            <input type="radio" name="options" [(ngModel)]="selectedOption" [value]="option">
+            {{ option }}
+          </label>
+        </li>
+      </ul>
+      <button (click)="onNextClick()">Next</button>
+    </div> 
+</div>
+  
+  

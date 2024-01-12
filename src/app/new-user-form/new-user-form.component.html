@@ -1,0 +1,13 @@
+<div class="form-container">
+    <h1>Create User</h1>
+
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name" required [(ngModel)]="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required [(ngModel)]="email">
+
+        <button type="submit" (click)="addUser()">Submit</button>
+    </form>
+</div>

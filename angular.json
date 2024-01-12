@@ -67,12 +67,17 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "CandidateView:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "CandidateView:build:production"
             },
             "development": {
-              "buildTarget": "CandidateView:build:development"
+              "buildTarget": "CandidateView:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
