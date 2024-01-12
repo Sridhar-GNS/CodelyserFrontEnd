@@ -1,26 +1,4 @@
-
-<div class="container" *ngIf="showInstructions; else candidateForm">
-  
-  
-  <h1>Instructions</h1>
-
-<p>
- 1. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
- 2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
- 3. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
- 4. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
- 5. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
- 6. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
- 7. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto recusandae, laboriosam impedit ea in atque inventore ipsa amet perspiciatis dolorem voluptates omnis. Odio aliquam delectus ipsa sequi, corporis enim.<br>
-</p>
-  <button (click)="proceed()">
-   Proceed
-  </button>
-  
-</div>
-<ng-template #candidateForm>
-  <app-candidate-form></app-candidate-form>
-</ng-template>
+<router-outlet></router-outlet>
 
 
 
