@@ -1,45 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../question.service';
-
+import {FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-test-page',
   templateUrl: './test-page.component.html',
   styleUrl: './test-page.component.scss'
 })
-export class TestPageComponent {
+export class TestPageComponent implements OnInit {
   currentIndex = 0;
-  currentQuestion: any;
-  showNextButton = false;
   questions: any;
-  questionList = false;
-  counter = 0;
-  selectedOption: string | null = null;
+  answers:any;
   onSubmit() {
-    this.questionList = true;
   }
 
   constructor(private questionService: QuestionService) { }
   ngOnInit(): void {
-    this.loadQuestion();
-  }
-  loadQuestion(): void {
-    this.currentQuestion = this.questionService.getQuestion(this.currentIndex);
-    this.showNextButton = false;
+    this.questions = this.questionService.getQuestions();
+    this.answers = Array.from({ length: this.questions.length }, (_, i) => "");
   }
 
-  onNextClick(): void {
-    if (this.currentIndex < this.questionService.getTotalQuestions()) {
-      this.currentIndex++;
-      this.counter++;
-      if (this.currentIndex < this.questionService.getTotalQuestions()) {
-        this.loadQuestion();
-      } else {
-        console.log('End of questions');
-      }
+  onPrevClick(){
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
     } else {
       console.log('reached');
     }
-    console.log(this.selectedOption);
-    this.selectedOption = null; 
+  }
+  
+  onNextClick(): void {
+    if (this.currentIndex < this.questions.length-1) {
+      this.currentIndex++;
+    } else {
+      console.log('reached');
+    }
+  }
+
+  goToQuestion(index: number) {
+    this.currentIndex = index;
+  }
+  checkIfSelected(){
+  }
+
+  isLastQuestion(): boolean {
+    return this.currentIndex === this.questions.length - 1;
   }
 }

@@ -1,0 +1,33 @@
+/* Assuming you have a class or ID for your navigation container, let's use 'navbar' */
+nav {
+    background-color: #333; /* Background color */
+  }
+  
+  ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make the list items horizontal */
+    justify-content: center;
+  }
+  
+  li {
+    margin-right: 10px; /* Adjust spacing between list items */
+  }
+  
+  a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Text color */
+    padding: 10px;
+    display: block; /* Make the entire area clickable */
+  }
+  
+  a:hover {
+    background-color: #555; /* Change background color on hover */
+  }
+  
+  /* Add a class 'active' for the active question */
+  li.active a {
+    background-color: #007bff; /* Active item background color */
+    color: #fff; /* Active item text color */
+  }

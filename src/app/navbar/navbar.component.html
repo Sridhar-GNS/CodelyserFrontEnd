@@ -1,0 +1,9 @@
+
+<nav>
+    <ul>
+        <li *ngFor="let question of questions; let i = index"
+            [class.active]="i === currentIndex">
+            <a (click)="goToQuestion(i)"> {{ i + 1 }}</a>
+        </li>
+    </ul>
+</nav>
