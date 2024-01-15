@@ -1,32 +1,23 @@
+<p>
+  <mat-toolbar>
+    <span>Please fill your details to start the test</span>
+  </mat-toolbar>
+</p>
 
-<!-- candidate-form.component.html -->
-<div *ngIf="candidateForm;else questionList">
-  <form (ngSubmit)="onSubmit()" #candidateForm="ngForm" >
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="name" required>
-    </div>
-  
-    <div>
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required>
-    </div>
-  
-    <div>
-      <label for="email">Email ID:</label>
-      <input type="email" id="email" name="email" [(ngModel)]="email" required>
-    </div>
-  
-    <div>
-      <label for="experience">Years of Experience:</label>
-      <input type="number" id="experience" name="experience" [(ngModel)]="experience" required>
-    </div>
-  
-    <button type="submit" [disabled]="!candidateForm.valid" >Start Test</button>
-  </form>
-</div>
-<!-- *ngIf="showcandidateForm:else Questions" -->
+<mat-form-field>
+  <mat-label>Name</mat-label>
+  <input matInput id="name" name="name" [(ngModel)]="name" required>
+</mat-form-field>
 
-<ng-template #questionList>
-  <app-question-list></app-question-list>
-</ng-template>
+<mat-form-field>
+  <mat-label>Email</mat-label>
+  <input matInput type="text" id="email" name="email" [(ngModel)]="email" required>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Phone No.</mat-label>
+  <input matInput type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required>
+</mat-form-field>
+<div>
+<button mat-raised-button color="primary" matTooltip="Submit and Start Test" (click)="onSubmit()">Submit</button>
+

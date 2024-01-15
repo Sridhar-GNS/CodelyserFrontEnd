@@ -7,23 +7,24 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './candidate-form.component.scss'
 })
 export class CandidateFormComponent {
-   @Input()
+  //  @Input()
   name!: string;
 
- @Input()
+//  @Input()
  phoneNumber!:string;
 
- @Input()
+//  @Input()
  email!:string;
 
- @Input()
- experience!:number;
-candidateForm= true;
+//  @Input()
+//  experience!:number;
+// candidateForm= true;
 
  
 
   onSubmit() {
-     this.candidateForm=false;
+    console.log('submitted');
+    //  this.candidateForm=false;
   }
 
   
