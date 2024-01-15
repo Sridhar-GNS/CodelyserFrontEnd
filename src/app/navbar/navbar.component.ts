@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { QuestionService } from '../question.service';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-navbar',

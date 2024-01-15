@@ -1,22 +1,20 @@
-<div>
-  <countdown class="timer"  #countdown [config]="{leftTime:3600}"></countdown>
-  <app-navbar [currentIndex]="currentIndex" (navigateToQuestion)="goToQuestion($event)"></app-navbar>
-  <div class="questionDiv">
-    <h2>Question {{ currentIndex + 1 }}</h2>
-    <p>{{ questions[currentIndex].question }}</p>
-    <ul>
-      <li *ngFor="let option of questions[currentIndex].options">
-        <label>
-          <input type="radio" name="options" [(ngModel)]="answers[currentIndex]" [value]="option">
-          {{ option }}
-        </label>
-      </li>
-    </ul>
 
-    <div class="buttonDiv">
-      <button (click)="onPrevClick()">Prev</button>
-      <button (click)="onNextClick()">Next</button>
-    </div>
-  </div> 
-  <button *ngIf="isLastQuestion()" class="submitBtn">Submit</button>
+<countdown class="timer" #countdown [config]="{leftTime: 3600}"></countdown>
+<app-navbar [currentIndex]="currentIndex" (navigateToQuestion)="goToQuestion($event)"></app-navbar>
+<div class="questionDiv">
+  <h2>Question {{ currentIndex + 1 }}</h2>
+  <p>{{ questions[currentIndex].question }}</p>
+
+  <mat-radio-group [(ngModel)]="answers[currentIndex]" name="options">
+    <mat-radio-button *ngFor="let option of questions[currentIndex].options" [value]="option">
+      {{ option }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <div class="buttonDiv">
+    <button (click)="onPrevClick()">Prev</button>
+    <button (click)="onNextClick()">Next</button>
+  </div>
 </div>
+
+<button *ngIf="isLastQuestion()" class="submitBtn">Submit</button>
